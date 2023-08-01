@@ -1,0 +1,161 @@
+.Fondo {
+    background-color: #f1f1f1; /* Color de fondo que desees */
+    border-radius: 20px; /* Valor de radio que desees para redondear los bordes */
+    padding: 20px; /* Opcional: agrega padding para espaciar el contenido del borde */
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  .FT {
+    background-color: #f1f1f1; /* Color de fondo que desees */
+    border-radius: 20px; /* Valor de radio que desees para redondear los bordes */
+    padding: 20px; /* Opcional: agrega padding para espaciar el contenido del borde */
+    width: 80%;
+    margin: 0 auto;
+  }
+  
+  /* Estilo para el fondo */
+  .background-gif {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../img/fondoGestiones.gif'); /* Aqui pueden camiar la ruta en caso que no les de */
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
+  }
+  
+  /* Estilo para el navbar */
+  .navbar {
+    margin-bottom: 20px;
+  }
+  
+  /* Estilo para icono svg */
+  .navbar-brand img {
+    height: 60px; /* Tamaño del icono svg */
+    width: auto; /* Mantener la proporción del ancho */
+    margin-right: 10px; /* Espacio entre el icono y el texto */
+  }
+  
+  
+  
+  /* css formulario */
+  
+  /* Aqui es para ajustar la posicion del formulario */
+  .contenedor-formulario {
+    margin-top: 100px;
+  }
+  
+  /* Estilo para el contenedor */
+  .contenedor-formulario{
+    background-color: #f8f9fa;
+    border-radius: 20px;
+  }
+  
+  /* Cambiar la tipografía del formulario */
+  .form-control,
+  .btn {
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Estilo para los labels */
+  .form-label {
+    font-weight: bold; /* El texto de los label se ara de un color mas resaltante  */
+    color: #333; /* Color */
+  }
+  
+  /* Estilo para los inputs */
+  .form-control {
+    border: none; /* Quitamos el borde predeterminado del input */
+    border-bottom: 3px solid #28a745; /* Agregamos una línea inferior de color verde (#28a745) */
+    border-radius: 0; /* Ajustamos el radio del borde inferior a 0 para que sea recto */
+    padding: 0; /* Eliminamos el padding para que la línea inferior esté más pegada al texto */
+    box-shadow: none; /* Quitamos cualquier sombra que pudiera haber */
+    background-color: transparent; /* Hacemos el fondo transparente */
+  }
+  
+  /* Estilo para el select del genero */
+  .form-control select {
+    border: none; /* Quitamos el borde del select */
+    border-bottom: 2px solid #28a745; /* Agregamos una línea inferior de color verde (#28a745) */
+    border-radius: 0; /* Ajustamos el radio del borde inferior a 0 para que sea recto */
+    padding: 0; /* Eliminamos el padding para que la línea inferior esté más pegada al texto */
+    background-color: transparent; /* Hacemos el fondo transparente para que se vea mejor */
+  }
+  
+  
+  /* Estilo para el placeholder */
+  .form-control::placeholder {
+    color: #aaa; /* Color más claro para el texto del placeholder */
+  }
+  
+  
+  .btn {
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer; /* Cambiamos el cursor al pasar por encima del botón */
+  }
+  
+  .btn-success {
+    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
+    background-color: #28a745;
+    border-color: #28a745;
+  }
+  
+  .btn-info {
+    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+  }
+  
+  .btn-warning {
+    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
+    background-color: #ffc107;
+    border-color: #ffc107;
+  }
+  
+  .btn-danger {
+    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
+    background-color: #dc3545;
+    border-color: #dc3545;
+  }
+  
+  
+  /* tabla */
+  
+  .contenedor-tabla{
+    background-color: #f8f9fa;
+    border-radius: 20px;
+  }
+  
+  
+  /* Estilo para la tabla */
+  .table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+  }
+  
+  .table thead th {
+    background-color: #468154; /* Color de fondo para el encabezado de la tabla */
+    color: #fff; /* Color del texto en el encabezado de la tabla */
+    font-weight: bold;
+  }
+  
+  .table th,
+  .table td {
+    padding: 10px; /* Espaciado interno de las celdas */
+    text-align: center; /* Alineación del texto en el centro */
+  }
+  
+  .table tbody tr:nth-child(even) {
+    background-color: #f8f9fa; /* Color de fondo para las filas pares */
+  }
+  
+  .table tbody tr:hover {
+    background-color: #d4edda; /* Color de fondo al pasar el cursor sobre una fila */
+  }
+  

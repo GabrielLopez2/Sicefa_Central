@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit this template
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="estilos/login.css"/>
+        <link rel="stylesheet" href="estilos/bootstrap.min.css"/>
+    </head>
+    <body class="FondoA">
+        <!-- logo -->
+        <img class="logo" src="./img/logocentral.png" alt="">
+
+        <div class="containerA">
+            <form id="form" class="login-form">
+                <h1 class="form-titulo">Login</h1>
+                <div class="form-group">
+                    <label for="usuario">Usuario:</label>
+                    <input type="text" id="usuario" placeholder="Admin" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña:</label>
+                    <input type="password" id="password" placeholder="Admin" max="7" min="3" name="password" required
+                           title="La contraseña debe llevar una combinación de números y letras, tanto minúsculas como mayúsculas."
+                           pattern="^[a-zA-Z]+$">
+
+                </div>
+
+                <div>
+                    <input type="submit" value="Enviar" class="btn btn-success" id="btnEnviar">
+                </div>
+            </form>
+        </div>
+
+        <script src="./js/login.js"></script>
+    </body>
+</html>
