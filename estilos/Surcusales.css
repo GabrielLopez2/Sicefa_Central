@@ -1,177 +1,278 @@
-.Fondo {
-  background-color: #f1f1f1; /* Color de fondo que desees */
-  border-radius: 20px; /* Valor de radio que desees para redondear los bordes */
-  padding: 20px; /* Opcional: agrega padding para espaciar el contenido del borde */
-  width: 80%;
-  margin: 0 auto;
+body {
+    font-family: 'Roboto Condensed', sans-serif;
+    font-size: 14px;
 }
 
-.FT {
-  background-color: #f1f1f1; /* Color de fondo que desees */
-  border-radius: 20px; /* Valor de radio que desees para redondear los bordes */
-  padding: 20px; /* Opcional: agrega padding para espaciar el contenido del borde */
-  width: 80%;
-  margin: 0 auto;
+/* Estilos para la imagen del ícono en el navbar */
+.navbar-brand img {
+    max-width: 57px; /* Ajusta el ancho máximo según lo que se vea bien en tu diseño */
+    height: auto; /* Mantén la proporción original de la imagen */
+    vertical-align: middle; /* Alinea verticalmente con el texto */
 }
 
+/* Alineación vertical y espaciado en la navbar-brand */
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
 
-/* Estilo para el fondo */
-.imagen_gif{
+/* Estilos para la barra de navegación */
+.custom-navbar {
+    background-color: #1c2833;
+    padding: 8px 0;
+}
+
+/* Cambiar la tipografía para toda la barra de navegación */
+.custom-navbar, .custom-navbar .nav-link {
+    font-family: Roboto Condensed, sans-serif; /* Cambiar a la tipografía deseada */
+    font-weight: 600;
+}
+
+.navbar-nav {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 0;
+}
+
+.navbar-nav .nav-item {
+    padding: 0 10px;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.custom-navbar .nav-item .nav-link {
+    color: white;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: block;
+    position: relative; /* Agregamos posicionamiento relativo */
+    overflow: hidden; /* Ocultamos el contenido extra */
+    transition: transform 0.2s;
+    white-space: nowrap; /* Evita el salto de línea */
+    text-overflow: ellipsis; /* Mostrar puntos suspensivos si el texto es muy largo */
+    font-size: 14px;
+}
+
+.custom-navbar .nav-item .nav-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #767676;
+    transform: translateY(150%);
+    z-index: -1;
+    transition: transform 0.3s;
+}
+
+.custom-navbar .nav-item .nav-link:hover::before {
+    transform: translateY(0);
+}
+
+.custom-navbar .nav-item .icon-with-animation {
+    transition: transform 0.2s;
+}
+
+.custom-navbar .nav-item .icon-with-animation:hover {
+    transform: translateY(-5px);
+}
+
+/* end css navbar */
+
+/* css fondo */
+.background-gif {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
     background-image: url('../img/fondoGestiones.gif'); /* Aqui pueden camiar la ruta en caso que no les de */
     background-size: cover;
+    background-repeat: no-repeat;
+    z-index: -1;
 }
 
-/* Estilo para el navbar */
-.navbar {
-  margin-bottom: 20px;
-}
+/* end */
 
-/* Estilo para icono svg */
-.navbar-brand img {
-  height: 60px; /* Tamaño del icono svg */
-  width: auto; /* Mantener la proporción del ancho */
-  margin-right: 10px; /* Espacio entre el icono y el texto */
-}
-
-
-
-/* css formulario */
-
-/* Aqui es para ajustar la posicion del formulario */
+/* formulario css */
 .contenedor-formulario {
-  margin-top: 100px;
+    margin-top: 100px;
 }
 
-/* Estilo para el contenedor */
 .contenedor-formulario{
-  background-color: #f8f9fa;
-  border-radius: 20px;
+    background-color: #f8f9fa;
+    border-radius: 20px;
 }
-
-/* Cambiar la tipografía del formulario */
-.form-control,
-.btn {
-  font-family: Arial, sans-serif;
-}
-
-/* Estilo para los labels */
-.form-label {
-  font-weight: bold; /* El texto de los label se ara de un color mas resaltante  */
-  color: #333; /* Color */
-}
-
-/* Estilo para los inputs */
-.form-control {
-  border: none; /* Quitamos el borde predeterminado del input */
-  border-bottom: 3px solid #28a745; /* Agregamos una línea inferior de color verde (#28a745) */
-  border-radius: 0; /* Ajustamos el radio del borde inferior a 0 para que sea recto */
-  padding: 0; /* Eliminamos el padding para que la línea inferior esté más pegada al texto */
-  box-shadow: none; /* Quitamos cualquier sombra que pudiera haber */
-  background-color: transparent; /* Hacemos el fondo transparente */
-}
-
-/* Estilo para el select del genero */
-.form-control select {
-  border: none; /* Quitamos el borde del select */
-  border-bottom: 2px solid #28a745; /* Agregamos una línea inferior de color verde (#28a745) */
-  border-radius: 0; /* Ajustamos el radio del borde inferior a 0 para que sea recto */
-  padding: 0; /* Eliminamos el padding para que la línea inferior esté más pegada al texto */
-  background-color: transparent; /* Hacemos el fondo transparente para que se vea mejor */
+.input-group {
+    position: relative;
 }
 
 
-/* Estilo para el placeholder */
-.form-control::placeholder {
-  color: #aaa; /* Color más claro para el texto del placeholder */
+.input-group {
+    border: none;
+    border-bottom: 2px solid #00508C;
+    border-radius: 0;
+    box-shadow: none;
+    padding-left: 40px;
+}
+
+.input-group .input-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 10px;
+    color: #00508C; /* Color del ícono */
+    z-index: 2; /* Ícono por encima del campo de entrada */
+}
+.mystile {
+    background-color: transparent !important;
+    border-color: transparent !important;
+    box-shadow: none !important;
 }
 
 
-.btn {
-  border-radius: 20px;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer; /* Cambiamos el cursor al pasar por encima del botón */
+/* Estilos generales para los botones */
+.boton {
+    position: relative;
+    border: none;
+    padding: 20px 75px;
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    background-color: #4682B4; /* Aqui se puede cambiar el color de los botones */
+    color: white;
+    transition: background-color 0.4s, color 0.4s;
 }
 
-.btn-success {
-  margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-  background-color: #28a745;
-  border-color: #28a745;
+/* Estilos para los botones "Agregar" y "Limpiar" */
+.boton.boton-agregar:hover {
+    background-color: #198754; /* Cambio de color al pasar el mouse */
 }
 
-.btn-info {
-  margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-  background-color: #17a2b8;
-  border-color: #17a2b8;
+.boton.boton-limpiar:hover {
+    background-color: #0dcaf0; /* Cambio de color al pasar el mouse */
 }
 
-.btn-warning {
-  margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-  background-color: #ffc107;
-  border-color: #ffc107;
+.boton.boton-Modificar:hover {
+    background-color: #ad6bf6; /* Cambio de color al pasar el mouse */
 }
 
-.btn-danger {
-  margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-  background-color: #dc3545;
-  border-color: #dc3545;
+.boton.boton-Eliminar:hover {
+    background-color: #dc3545; /* Cambio de color al pasar el mouse */
 }
 
-
-/* tabla */
-
-.contenedor-tabla{
-  background-color: #f8f9fa;
-  border-radius: 20px;
+.boton .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    left: -40px;
+    top: 55%;
+    transform: translateY(-50%);
+    transition: 0.3s ease-in-out all;
+    opacity: 0;
 }
 
-
-/* Estilo para la tabla */
-.table {
-  width: 100%;
-  border-collapse: collapse;
-  border-spacing: 0;
+.boton svg {
+    color: #fff;
+    width: 35px;
+    height: 35px;
 }
 
+.boton:hover .icono {
+    left: calc(100% - 50px);
+    opacity: 1;
+}
+
+.boton span {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease-in-out all;
+}
+
+/* estilos para la tabla */
+
+/* Estilos para los encabezados de columna (th) */
 .table thead th {
-  background-color: #28a745; /* Color de fondo para el encabezado de la tabla */
-  color: #fff; /* Color del texto en el encabezado de la tabla */
-  font-weight: bold;
+    background-color: #00508C;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    
 }
 
-.table th,
-.table td {
-  padding: 10px; /* Espaciado interno de las celdas */
-  text-align: center; /* Alineación del texto en el centro */
+/* Estilos para las celdas de contenido (td) */
+.table tbody td {
+    background-color: #87CEEB;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+}
+
+/* Estilos para la fuente del encabezado de la tabla */
+.table h5 {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #00508C;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+/* Estilos adicionales para la tabla */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
 }
 
 .table tbody tr:nth-child(even) {
-  background-color: #f8f9fa; /* Color de fondo para las filas pares */
+    background-color: #b0e0e6;
 }
 
-.table tbody tr:hover {
-  background-color: #d4edda; /* Color de fondo al pasar el cursor sobre una fila */
+/* Estilos para el ícono */
+.fa-users,
+.fa-search {
+    font-size: 1.5rem;
+    margin-right: 0.5rem;
 }
 
-/* Estilo para el campo de búsqueda */
-.Buscar {
-  display: flex;
-  align-items: center;
+/* footer */
+
+/* Estilos para el footer */
+.footer {
+    background-color: #1c2833;
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-.Buscar .form-label {
-  margin-right: 10px; /* Espaciado entre el texto y el campo de búsqueda */
+.footer hr {
+    margin: 10px 0;
 }
 
-.Buscar input[type="text"] {
-  border: 2px solid #28a745; /* Borde del campo de búsqueda */
-  border-radius: 4px; /* Radio del borde */
-  padding: 5px 10px; /* Espaciado interno */
-  font-size: 14px;
+.footer h3 {
+    margin: 10px 0;
+    font-size: 18px;
 }
 
-.Buscar button {
-  padding: 5px 10px; /* Espaciado interno del botón */
-  font-size: 14px;
+.footer p {
+    margin: 0;
+    font-size: 14px;
 }
 
+.main-content {
+    min-height: calc(100vh - 250px);
+}

@@ -1,3 +1,85 @@
+body {
+  font-family: 'Roboto Condensed', sans-serif;
+  font-size: 14px;
+}
+
+/* Estilos para la imagen del ícono en el navbar */
+.navbar-brand img {
+  max-width: 57px; /* Ajusta el ancho máximo según lo que se vea bien en tu diseño */
+  height: auto; /* Mantén la proporción original de la imagen */
+  vertical-align: middle; /* Alinea verticalmente con el texto */
+}
+
+/* Alineación vertical y espaciado en la navbar-brand */
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilos para la barra de navegación */
+.custom-navbar {
+  background-color: #1c2833;
+  padding: 8px 0;
+}
+
+/* Cambiar la tipografía para toda la barra de navegación */
+.custom-navbar, .custom-navbar .nav-link {
+  font-family: Roboto Condensed, sans-serif; /* Cambiar a la tipografía deseada */
+  font-weight: 600;
+}
+
+.navbar-nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  margin: 0;
+}
+
+.navbar-nav .nav-item {
+  padding: 0 10px;
+}
+
+/* Estilos para los enlaces de la barra de navegación */
+.custom-navbar .nav-item .nav-link {
+  color: white;
+  font-size: 18px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  text-align: center;
+  display: block;
+  position: relative; /* Agregamos posicionamiento relativo */
+  overflow: hidden; /* Ocultamos el contenido extra */
+  transition: transform 0.2s;
+  white-space: nowrap; /* Evita el salto de línea */
+  text-overflow: ellipsis; /* Mostrar puntos suspensivos si el texto es muy largo */
+  font-size: 14px;
+}
+
+.custom-navbar .nav-item .nav-link::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #767676;
+  transform: translateY(150%);
+  z-index: -1;
+  transition: transform 0.3s;
+}
+
+.custom-navbar .nav-item .nav-link:hover::before {
+  transform: translateY(0);
+}
+
+.custom-navbar .nav-item .icon-with-animation {
+  transition: transform 0.2s;
+}
+
+.custom-navbar .nav-item .icon-with-animation:hover {
+  transform: translateY(-5px);
+}
+
 .Fondo {
     background-color: #f1f1f1; /* Color de fondo que desees */
     border-radius: 20px; /* Valor de radio que desees para redondear los bordes */
@@ -39,88 +121,67 @@
     margin-right: 10px; /* Espacio entre el icono y el texto */
   }
   
-  
-  
-  /* css formulario */
-  
-  /* Aqui es para ajustar la posicion del formulario */
-  .contenedor-formulario {
-    margin-top: 100px;
+ 
+  .boton-container {
+    display: flex;
+    justify-content: space-between;
   }
   
-  /* Estilo para el contenedor */
-  .contenedor-formulario{
-    background-color: #f8f9fa;
-    border-radius: 20px;
+  .boton, .boton2 {
+    flex: 1;
+    position: relative;
+    border: none;
+    padding: 20px 95px; /* Ajustar el padding según tus preferencias */
+    font-size: 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    overflow: hidden;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 600;
+    color: black;
+    transition: background-color 0.4s, color 0.4s;
   }
   
-  /* Cambiar la tipografía del formulario */
-  .form-control,
-  .btn {
-    font-family: Arial, sans-serif;
+  .boton.boton-noatendido:hover {
+    background-color: #ac1313;
   }
   
-  /* Estilo para los labels */
-  .form-label {
-    font-weight: bold; /* El texto de los label se ara de un color mas resaltante  */
-    color: #333; /* Color */
+  .boton2.boton-limpiar:hover {
+    background-color: #0dcaf0;
   }
   
-  /* Estilo para los inputs */
-  .form-control {
-    border: none; /* Quitamos el borde predeterminado del input */
-    border-bottom: 3px solid #28a745; /* Agregamos una línea inferior de color verde (#28a745) */
-    border-radius: 0; /* Ajustamos el radio del borde inferior a 0 para que sea recto */
-    padding: 0; /* Eliminamos el padding para que la línea inferior esté más pegada al texto */
-    box-shadow: none; /* Quitamos cualquier sombra que pudiera haber */
-    background-color: transparent; /* Hacemos el fondo transparente */
+  .boton .icono, .boton2 .icono {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 2;
+    left: -40px;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: 0.3s ease-in-out all;
+    opacity: 0;
+  
   }
   
-  /* Estilo para el select del genero */
-  .form-control select {
-    border: none; /* Quitamos el borde del select */
-    border-bottom: 2px solid #28a745; /* Agregamos una línea inferior de color verde (#28a745) */
-    border-radius: 0; /* Ajustamos el radio del borde inferior a 0 para que sea recto */
-    padding: 0; /* Eliminamos el padding para que la línea inferior esté más pegada al texto */
-    background-color: transparent; /* Hacemos el fondo transparente para que se vea mejor */
+  .boton svg, .boton2 svg {
+    color: #fff;
+    width: 35px;
+    height: 35px;
+    
   }
   
-  
-  /* Estilo para el placeholder */
-  .form-control::placeholder {
-    color: #aaa; /* Color más claro para el texto del placeholder */
+  .boton:hover .icono, .boton2:hover .icono {
+    left: calc(100% - 50px);
+    opacity: 1;
   }
   
-  
-  .btn {
-    border-radius: 20px;
-    padding: 10px 20px;
-    font-size: 16px;
-    cursor: pointer; /* Cambiamos el cursor al pasar por encima del botón */
-  }
-  
-  .btn-success {
-    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-    background-color: #28a745;
-    border-color: #28a745;
-  }
-  
-  .btn-info {
-    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-    background-color: #17a2b8;
-    border-color: #17a2b8;
-  }
-  
-  .btn-warning {
-    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-    background-color: #ffc107;
-    border-color: #ffc107;
-  }
-  
-  .btn-danger {
-    margin-right: 5px; /* Añadimos un pequeño margen derecho para separar los botones */
-    background-color: #dc3545;
-    border-color: #dc3545;
+  .boton span, .boton2 span {
+    position: absolute;
+    left: 30%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    transition: 0.4s ease-in-out all;
   }
   
   
@@ -132,30 +193,81 @@
   }
   
   
-  /* Estilo para la tabla */
-  .table {
-    width: 100%;
-    border-collapse: collapse;
-    border-spacing: 0;
-  }
-  
   .table thead th {
-    background-color: #468154; /* Color de fondo para el encabezado de la tabla */
-    color: #fff; /* Color del texto en el encabezado de la tabla */
-    font-weight: bold;
-  }
-  
-  .table th,
-  .table td {
-    padding: 10px; /* Espaciado interno de las celdas */
-    text-align: center; /* Alineación del texto en el centro */
-  }
-  
-  .table tbody tr:nth-child(even) {
-    background-color: #f8f9fa; /* Color de fondo para las filas pares */
-  }
-  
-  .table tbody tr:hover {
-    background-color: #d4edda; /* Color de fondo al pasar el cursor sobre una fila */
-  }
-  
+    background-color: #00508C;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+
+/* Estilos para las celdas de contenido (td) */
+.table tbody td {
+    background-color: #87CEEB;
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    color: black;
+}
+
+/* Estilos para la fuente del encabezado de la tabla */
+.table h5 {
+    color: white;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #00508C;
+    padding: 10px;
+    border-radius: 5px;
+    color: black;
+}
+
+/* Estilos adicionales para la tabla */
+.table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.table th, .table td {
+    padding: 8px;
+    text-align: center;
+    vertical-align: middle;
+    
+}
+
+.table tbody tr:nth-child(even) {
+    background-color: #b0e0e6;
+}
+
+.container {
+    position: relative;
+}
+
+.table {
+    /* Tus estilos para la tabla */
+}
+
+.footer {
+    background-color: #1c2833;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.footer hr {
+    margin: 10px 0;
+}
+
+.footer h3 {
+    margin: 10px 0;
+    font-size: 28px;
+}
+
+.footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+.main-content {
+    min-height: calc(100vh - 350px);
+}
+

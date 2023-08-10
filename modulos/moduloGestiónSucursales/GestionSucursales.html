@@ -7,52 +7,56 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
     <head>
         <title>Gestion De Sucursales</title>
         <meta charset="UTF-8">
+        <link rel="icon" href="../../img/FondoG.svg">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="../../estilos/bootstrap.min.css"/>
         <link rel="stylesheet" href="../../estilos/Surcusales.css"/>
     </head>
-    <body class="imagen_gif">
-  <nav class="navbar navbar-dark bg-dark fixed-top">
+    <body class="background-gif">
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top custom-navbar">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
-                    <img src="../../img/FondoG.svg" alt="Logo" class="d-inline-block align-text-top">
-                    SICEFA Central
+                <a class="navbar-brand">
+                    <img src="../../img/FondoG.svg" alt="Logo" class="d-inline-block align-text-top max-icon-size">
+                    <span class="text-white fs-4" id="nombreCentro">
+                        SICEFA Central
+                    </span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Gestiones</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
-                            <li class="nav-item dropdown">
-                                <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    <img src="../../img/admin.svg" alt="logoAdm" width="35" height="24">
-                                    Admin
-                                </a>
-                                <ul class="dropdown-menu">
-                                    <li><a class="dropdown-item" href="#">Cambiar Contraseña</a></li>
-                                    <li><hr class="dropdown-divider"></li>
-                                    <li><a class="dropdown-item" href="../../index.html">Cerrar sesion</a></li>
-                                </ul>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../home.html">Principal</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Gestión de Sucursales</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="./../moduloGestiónProductos/GestionProductos.html">Gestión de Productos</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="../moduloControlSeguimientoPedidos/GestionSeguimientoPedidos.html">Control y seguimiento a Pedidos de Compra desde las Sucursales</a>
-                            </li>
-                        </ul>
-                    </div>
+                <div class="navbar-collapse justify-content-center" id="navbarScroll">
+                    <ul class="navbar-nav mb-lg-0 justify-content-center" style="--bs-scroll-height: 100px;">
+                        <li class="nav-item">
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="../home.html">
+                                <i class="fa-solid fa-house"  style="color: #ffffff;"></i> Home
+                            </a>
+                        </li>
+
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="../moduloGestiónProductos/GestionProductos.html">
+                                <i class="fa-solid fa-bag-shopping"></i> Gestión de Productos 
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active text-white" aria-current="page" href="../moduloControlSeguimientoPedidos/GestionSeguimientoPedidos.html">
+                                <i class="fas fa-arrow-right"></i> Control y seguimiento a Pedidos de Compra desde las Sucursales
+                            </a>
+                        </li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle text-white" id="nombreUsuario" role="button" data-bs-toggle="dropdown"
+                               aria-expanded="false">
+                                <i class="fa-solid fa-user"></i>
+                                Admin
+                            </a>
+                            <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="nombreUsuario">
+                                <li> <a class="dropdown-item text-black" href="#"><i class="fa-solid fa-key"></i> Contraseña</a></li>
+                                <li><a class="dropdown-item text-black" href="../../index.html"><i class="fa-solid fa-sign-out"></i> Cerrar sesión</a></li>
+                            </ul>
+                        </li>
+                    </ul>
                 </div>
             </div>
         </nav>
@@ -71,23 +75,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                     <form>
                                         <!-- Columna 1 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtnombre">Nombre de la Sucursal:</label>
-                                            <input type="text" class="form-control" id="txtnombreSucursal" name="txtnombre" placeholder="Sucursal" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras" >
+                                            <label class="form-label" for="txtnom">Nombre Sucursal:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-shop"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtnombreSucursal" name="txtNom"  placeholder="Sucursal" required maxlength="20" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                                </div>
+                                            </label>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtapellidop">Nombre del Titular:</label>
-                                            <input type="text" class="form-control" id="txtnombreTitular" name="txtapellidop" placeholder="Titular" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras" >
+                                            <label class="form-label" for="txtnombre">Nombre del Titular:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-user"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtnombreTitular" name="txtnombre" placeholder="Titular" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras" >
+                                                </div>
+                                            </label>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtapellidom">RFC del Titular</label>
-                                            <input type="text" class="form-control" id="txtrfc" name="txtrfc" placeholder="RFC" required maxlength="13" pattern="[A-Za-z]{4}\d{6}[A-Za-z\d]{3}">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="txtrfc">Domicilio:</label>
-                                            <input type="text" class="form-control" id="txtDomicilio" name="txtDomicilio" placeholder="Domicilio" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                            <label class="form-label" for="txtrfc">RFC del Titular
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa fa-clipboard"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtrfc" name="txtrfc" placeholder="RFC" required maxlength="13" pattern="[A-Za-z]{4}\d{6}[A-Za-z\d]{3}">
+                                                </div>
+                                            </label>
                                         </div>
                                     </form>
                                 </div>
@@ -96,23 +107,30 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                     <form>
                                         <!-- Columna 2 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtcurp">Colonia:</label>
-                                            <input type="text" class="form-control" id="txtColonia" name="txtColonia" placeholder="Colonia" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                            <label class="form-label" for="txtDomicilio">Domicilio:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-house"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtDomicilio" name="txtDomicilio" placeholder="Domicilio" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                                </div>
+                                            </label>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtdomicilio">Latitud:</label>
-                                            <input type="text" class="form-control" id="txtLatitud" name="txtLatitud" placeholder="Latitud" required>
+                                            <label class="form-label" for="txtColonia">Colonia:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-house"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtColonia" name="txtColonia" placeholder="Colonia" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                                </div>
+                                            </label>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtcodigop">Ciudad:</label>
-                                            <input type="text" class="form-control" id="txtCiudad" name="txtCiudad" placeholder="Ciudad" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
-                                        </div>
-
-                                        <div class="mb-3">
-                                            <label class="form-label" for="txtCiudad">Estado:</label>
-                                            <input type="text" class="form-control" id="txtEstado" name="txtEstado" placeholder="Estado" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                            <label class="form-label" for="txtCiudad">Ciudad:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-city"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtCiudad" name="txtCiudad" placeholder="Ciudad" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                                </div>
+                                            </label>
                                         </div>
 
                                     </form>
@@ -122,32 +140,74 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                     <form>
                                         <!-- Columna 3 -->
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtelefono">Codigo Postal:</label>
-                                            <input type="text" class="form-control" id="txtCP" name="txtCP" placeholder="CP" maxlength="5" pattern="\d{5}">
-                                        </div>
-                                        
-                                    
-                                        <div class="mb-3">
-                                            <label class="form-label" for="txtelefono">Telefono:</label>
-                                            <input type="text" class="form-control" id="txtTelefono" name="txtTelefono" placeholder="Telefono" maxlength="10" pattern="\d{10}">
+                                            <label class="form-label" for="txtestado">Estado:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-city"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtEstado" name="txtEstado" placeholder="Estado" required maxlength="40" pattern="[A-Za-zÁÉÍÓÚáéíóúñÑ\s]+" title="Este campo solo acepta letras">
+                                                </div>
+                                            </label>
                                         </div>
 
                                         <div class="mb-3">
-                                            <label class="form-label" for="txtelefono">Longitud</label>
-                                            <input type="text" class="form-control" id="txtLongitud" name="txtLogitud" placeholder="Longitud" required>
+                                            <label class="form-label" for="txtcp">Código Postal:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa fa-clipboard"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtCP" name="txtCP" placeholder="Código Postal" required maxlength="5">
+                                                </div>
+                                            </label>
                                         </div>
 
-                                        <!-- Aqui se pueden agregar otros label y input en caso de haber mas -->
+
+                                        <div class="mb-3">
+                                            <label class="form-label" for="txtelefono">Teléfono:
+                                                <div class="input-group">
+                                                    <span class="input-icon"><i class="fa-solid fa-phone"></i></span>
+                                                    <input type="text" class="form-control mystile" id="txtTelefono" name="txtTelefono" placeholder="Telefono" maxlength="10" pattern="\d{10}">
+                                                </div>
+                                            </label>
+                                        </div>
+
                                     </form>
                                 </div>
                             </div>
                         </div>
                         <br>
-                        <div class="text-center">
-                            <button type="button" class="btn btn-success" id="btnAgregar" onclick="agregarSucursal();">Agregar</button>
-                            <button type="button" class="btn btn-info" id="btnLimpiar" onclick="limpiar();">Limpiar</button>
-                            <button type="button" class="btn btn-warning" id="btnModificar" onclick="modificarSucursal();">Modificar</button>
-                            <button type="button" class="btn btn-danger" id="btnEliminar" onclick="eliminarSucursal();">Eliminar</button>
+                        <div class="contenedor-botones text-center">
+                            <button class="boton boton-agregar" id="btnAgregar" onclick="agregarSucursal();">
+                                <div class="icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 640 512">
+                                    <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3zM504 312V248H440c-13.3 0-24-10.7-24-24s10.7-24 24-24h64V136c0-13.3 10.7-24 24-24s24 10.7 24 24v64h64c13.3 0 24 10.7 24 24s-10.7 24-24 24H552v64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
+                                    </svg>
+                                </div>
+                                <span>Agregar</span>
+                            </button>
+
+                            <button class="boton boton-limpiar" id="btnLimpiar" onclick="limpiar();">
+                                <div class="icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512">
+                                    <path d="M290.7 57.4L57.4 290.7c-25 25-25 65.5 0 90.5l80 80c12 12 28.3 18.7 45.3 18.7H288h9.4H512c17.7 0 32-14.3 32-32s-14.3-32-32-32H387.9L518.6 285.3c25-25 25-65.5 0-90.5L381.3 57.4c-25-25-65.5-25-90.5 0zM297.4 416H288l-105.4 0-80-80L227.3 211.3 364.7 348.7 297.4 416z"/>
+                                    </svg>
+                                </div>
+                                <span>Limpiar</span>
+                            </button>
+
+                            <button class="boton boton-Modificar" id="btnModificar" onclick="modificarSucursal();">
+                                <div class="icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 576 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{
+                                            fill:#ffffff
+                                        }</style><path d="M0 64C0 28.7 28.7 0 64 0H224V128c0 17.7 14.3 32 32 32H384V285.7l-86.8 86.8c-10.3 10.3-17.5 23.1-21 37.2l-18.7 74.9c-2.3 9.2-1.8 18.8 1.3 27.5H64c-35.3 0-64-28.7-64-64V64zm384 64H256V0L384 128zM549.8 235.7l14.4 14.4c15.6 15.6 15.6 40.9 0 56.6l-29.4 29.4-71-71 29.4-29.4c15.6-15.6 40.9-15.6 56.6 0zM311.9 417L441.1 287.8l71 71L382.9 487.9c-4.1 4.1-9.2 7-14.9 8.4l-60.1 15c-5.5 1.4-11.2-.2-15.2-4.2s-5.6-9.7-4.2-15.2l15-60.1c1.4-5.6 4.3-10.8 8.4-14.9z"/></svg>
+                                </div>
+                                <span>Modificar</span>
+                            </button>
+
+                            <button class="boton boton-Eliminar" id="btnEliminar" onclick="eliminarSucursal();">
+                                <div class="icono">
+                                    <svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 448 512"><!--! Font Awesome Free 6.4.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><style>svg{
+                                            fill:#ffffff
+                                        }</style><path d="M135.2 17.7L128 32H32C14.3 32 0 46.3 0 64S14.3 96 32 96H416c17.7 0 32-14.3 32-32s-14.3-32-32-32H320l-7.2-14.3C307.4 6.8 296.3 0 284.2 0H163.8c-12.1 0-23.2 6.8-28.6 17.7zM416 128H32L53.2 467c1.6 25.3 22.6 45 47.9 45H346.9c25.3 0 46.3-19.7 47.9-45L416 128z"/></svg>
+                                </div>
+                                <span>Eliminar</span>
+                            </button>
                         </div>
                         <br>
                         <hr>
@@ -158,12 +218,13 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                         <div class="container">
                                             <h5>Sucursales</h5>
                                         </div>
+
                                         <!-- Buscar -->
-                                        <div class="container">
+                                        <div class="container search-container">
                                             <form class="d-flex" role="search" onsubmit="buscarSucursal(event)">
-                                                <input class="form-control me-2" type="search" id="buscarInput" placeholder="Buscar" aria-label="Search">
-                                                <button class="btn btn-outline-success" type="submit">Buscar Sucursal</button>
-                                            </form>
+                                                <input class="form-control search-input" type="search" id="buscarInput" placeholder="Buscar Producto..." aria-label="Search">
+                                                <button class="btn btn-outline-success search-button" type="submit"><i class="fas fa-search"></i></button>
+                                            </form> 
                                         </div>
                                         <br>
                                         <table class="table table-success align-middle">
@@ -175,12 +236,10 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                                                     <th scope="col">RFC del Titular</th>
                                                     <th scope="col">Domicilio</th>
                                                     <th scope="col">Colonia</th>
-                                                    <th scope="col">Latitud</th>
                                                     <th scope="col">Ciudad</th>
                                                     <th scope="col">Estado</th>
-                                                    <th scope="col">Codigo Postal</th>
-                                                    <th scope="col">Telefono</th>
-                                                    <th scope="col">Longitud</th>
+                                                    <th scope="col">Código Postal</th>
+                                                    <th scope="col">Teléfono</th>
                                                     <th scope="col">Estatus</th>
                                                 </tr>
                                             </thead>
@@ -197,11 +256,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/Html.html to edit thi
                 </div>
             </div>
 
-
+            <footer class="footer">
+                <hr>
+                <h3>CODE ON DEVELOPMENT|Medicamos tu vida S.A.</h3>
+                <p>&copy; 2023 Todos los derechos reservados.</p>
+            </footer>
 
             <script src="../moduloGestiónSucursales/scriptSucursales.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
-        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
-
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.4/dist/sweetalert2.all.min.js"></script>
+            <script src="https://kit.fontawesome.com/da9de614d9.js" crossorigin="anonymous"></script>
     </body>
 </html>
